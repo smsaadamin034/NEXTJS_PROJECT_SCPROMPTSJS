@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState, useRouter } from "react";
+import { useEffect, useState,} from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import {useRouter} from 'next/navigation';
 
 const Nav = () => {
   const { data: session } = useSession();

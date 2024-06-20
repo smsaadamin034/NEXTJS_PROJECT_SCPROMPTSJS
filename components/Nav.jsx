@@ -43,8 +43,7 @@ const Nav = () => {
 
             <button type='button'
               onClick={() => {
-                signOut();
-                router.push('/');
+                signOut({ callbackUrl: '/' });
               }}
               className='outline_btn'>
               Sign Out

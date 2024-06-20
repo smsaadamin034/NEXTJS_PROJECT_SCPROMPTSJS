@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState,} from "react";
+import { useEffect, useState, } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const Nav = () => {
   const { data: session } = useSession();
@@ -41,7 +41,12 @@ const Nav = () => {
               Create Post
             </Link>
 
-            <button type='button' onClick={signOut} className='outline_btn'>
+            <button type='button'
+              onClick={() => {
+                signOut();
+                router.push('/');
+              }}
+              className='outline_btn'>
               Sign Out
             </button>
 

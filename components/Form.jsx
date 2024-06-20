@@ -31,19 +31,23 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Field of Prompt{" "}
+            Categories{` `}
             <span className='font-normal'>
-              (#product, #webdevelopment, #idea, etc.)
+              (Select a category)
             </span>
           </span>
-          <input
+          <select
+            className="form_input"
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            type='text'
-            placeholder='#Tag'
-            required
-            className='form_input'
-          />
+          >
+            <option value="">Select a category</option>
+            <option value="Inventory Management">Inventory Management</option>
+            <option value="Warehouse Management">Warehouse Management</option>
+            <option value="Demand Forecasting">Demand Forecasting</option>
+            <option value="Vendor Management">Vendor Management</option>
+            {/* Add more options as needed */}
+          </select>
         </label>
 
         <div className='flex-end mx-3 mb-5 gap-4'>
@@ -56,7 +60,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             disabled={submitting}
             className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'
           >
-            {submitting ? `${type}ing...` : type}
+            {submitting ? `${type}...` : type}
           </button>
         </div>
       </form>
